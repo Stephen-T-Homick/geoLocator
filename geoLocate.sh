@@ -2,7 +2,7 @@
 ### Requires jq, curl and dig to be installed. ###
 #
 function geo(){
-    for args in $@ ; do curl -s ipinfo.io/$(dig +short "$args") | jq;done
+    for args in $@ ; do curl -s ipinfo.io/$(dig +short "$args") | jq 2> /dev/null;done
 }
 
 if [ $# -eq 0 ] ; then
